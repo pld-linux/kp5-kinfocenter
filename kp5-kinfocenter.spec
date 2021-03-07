@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.15.3
+%define		kdeplasmaver	5.21.2
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.15.3
+Version:	5.21.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8064140c272452f7610e35b714930ca4
+# Source0-md5:	3ff86188bcb031a63a1f210741734658
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
@@ -21,6 +21,7 @@ BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-khtml-devel
 BuildRequires:	ninja
+BuildRequires:	pciutils-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
@@ -39,12 +40,14 @@ install -d build
 cd build
 %cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+	-DHTML_INSTALL_DIR=%{_kdedocdir} \
 	..
 %ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %ninja_install -C build
+rm -rf $RPM_BUILD_ROOT%{_kdedocdir}/{sr,sr@latin}
 
 %find_lang %{kpname} --all-name --with-kde
 
@@ -59,10 +62,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_devinfo.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_info.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_memory.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_nic.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_opengl.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_pci.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_samba.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_usb.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_view1394.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
@@ -100,14 +101,29 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kcmview1394.desktop
 %{_datadir}/kservices5/lostfoundcategory.desktop
 %{_datadir}/kservices5/networkinfocategory.desktop
-%{_datadir}/kservices5/nic.desktop
 %{_datadir}/kservices5/opengl.desktop
-#%{_datadir}/kservices5/scsi.desktop
 %{_datadir}/kservices5/smbstatus.desktop
 %{_datadir}/kservices5/wayland.desktop
 %{_datadir}/kservices5/xserver.desktop
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
-%dir %{_datadir}/kxmlgui5/kinfocenter
-%{_datadir}/kxmlgui5/kinfocenter/kinfocenterui.rc
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.json
 %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.json
+%{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
+
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_nic.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_samba.so
+%dir %{_datadir}/kpackage/kcms/kcm_nic
+%dir %{_datadir}/kpackage/kcms/kcm_nic/contents
+%dir %{_datadir}/kpackage/kcms/kcm_nic/contents/ui
+%{_datadir}/kpackage/kcms/kcm_nic/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_nic/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_nic/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcmsamba
+%dir %{_datadir}/kpackage/kcms/kcmsamba/contents
+%{_datadir}/kpackage/kcms/kcmsamba/contents/ShareListItem.qml
+%{_datadir}/kpackage/kcms/kcmsamba/contents/main.qml
+%{_datadir}/kpackage/kcms/kcmsamba/metadata.desktop
+%{_datadir}/kpackage/kcms/kcmsamba/metadata.json
+%{_datadir}/kservices5/basicinformation.desktop
+%{_datadir}/kservices5/detailedinformation.desktop
+%{_datadir}/kservices5/kcm_nic.desktop
