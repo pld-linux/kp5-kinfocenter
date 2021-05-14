@@ -10,6 +10,8 @@ Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
 # Source0-md5:	5d16a3b6fe5df48f6d5a7919619c96fe
 URL:		http://www.kde.org/
+BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
@@ -17,6 +19,8 @@ BuildRequires:	Qt5X11Extras-devel >= %{qtver}
 BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-kcmutils-devel
+BuildRequires:	kf5-kdeclarative-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-khtml-devel
