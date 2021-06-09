@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.21.5
+%define		kdeplasmaver	5.22.0
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.21.5
-Release:	2
+Version:	5.22.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	5d16a3b6fe5df48f6d5a7919619c96fe
+# Source0-md5:	3852790b3c4884c535f7555a7580dc60
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
@@ -71,25 +71,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_usb.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_view1394.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_fileindexermonitor.so
 %{_desktopdir}/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
-%dir %{_datadir}/kcmusb
-%{_datadir}/kcmusb/usb.ids
-%dir %{_datadir}/kcmview1394
-%{_datadir}/kcmview1394/oui.db
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo/contents
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/Graph.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
-%dir %{_datadir}/kpackage/kcms/kcm_fileindexermonitor
-%dir %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents
-%dir %{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/constants.js
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.desktop
 %{_datadir}/kservices5/about-distro.desktop
 %{_datadir}/kservices5/deviceinfocategory.desktop
 %{_datadir}/kservices5/devinfo.desktop
@@ -98,7 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/interrupts.desktop
 %{_datadir}/kservices5/ioports.desktop
 %{_datadir}/kservices5/kcm_energyinfo.desktop
-%{_datadir}/kservices5/kcm_fileindexermonitor.desktop
 %{_datadir}/kservices5/kcm_memory.desktop
 %{_datadir}/kservices5/kcm_pci.desktop
 %{_datadir}/kservices5/kcmusb.desktop
@@ -111,7 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/xserver.desktop
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.json
-%{_datadir}/kpackage/kcms/kcm_fileindexermonitor/metadata.json
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_nic.so
