@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.22.0
+%define		kdeplasmaver	5.22.1
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.22.0
+Version:	5.22.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	3852790b3c4884c535f7555a7580dc60
+# Source0-md5:	fa40eff2f9e941cb6a77da812e973666
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
