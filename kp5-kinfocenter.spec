@@ -1,17 +1,17 @@
-%define		kdeplasmaver	5.22.5
+%define		kdeplasmaver	5.23.0
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.22.5
+Version:	5.23.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d644f32a70d3daf4b409efe26cf09c08
+# Source0-md5:	eba6a6dba8773f40e3512c58505b992f
 URL:		http://www.kde.org/
-BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	OpenGL-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
@@ -62,7 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kinfocenter
 /etc/xdg/menus/kinfocenter.menu
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_about_distro.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_devinfo.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_info.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcm_memory.so
@@ -80,22 +79,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
 %{_datadir}/kservices5/about-distro.desktop
-%{_datadir}/kservices5/deviceinfocategory.desktop
 %{_datadir}/kservices5/devinfo.desktop
 %{_datadir}/kservices5/dma.desktop
-%{_datadir}/kservices5/graphicalinfocategory.desktop
-%{_datadir}/kservices5/interrupts.desktop
 %{_datadir}/kservices5/ioports.desktop
 %{_datadir}/kservices5/kcm_energyinfo.desktop
 %{_datadir}/kservices5/kcm_memory.desktop
 %{_datadir}/kservices5/kcm_pci.desktop
 %{_datadir}/kservices5/kcmusb.desktop
 %{_datadir}/kservices5/kcmview1394.desktop
-%{_datadir}/kservices5/lostfoundcategory.desktop
-%{_datadir}/kservices5/networkinfocategory.desktop
 %{_datadir}/kservices5/opengl.desktop
 %{_datadir}/kservices5/smbstatus.desktop
-%{_datadir}/kservices5/wayland.desktop
 %{_datadir}/kservices5/xserver.desktop
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.json
@@ -115,6 +108,37 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcmsamba/contents/main.qml
 %{_datadir}/kpackage/kcms/kcmsamba/metadata.desktop
 %{_datadir}/kpackage/kcms/kcmsamba/metadata.json
-%{_datadir}/kservices5/basicinformation.desktop
-%{_datadir}/kservices5/detailedinformation.desktop
 %{_datadir}/kservices5/kcm_nic.desktop
+
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_about-distro.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_cpu.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_interrupts.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_vulkan.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_wayland.so
+%{_libdir}/qt5/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
+%{_libdir}/qt5/qml/org/kde/kinfocenter/private/qmldir
+%{_datadir}/kinfocenter
+%dir %{_datadir}/kpackage/kcms/kcm_about-distro
+%{_datadir}/kpackage/kcms/kcm_about-distro/contents/main.qml
+%{_datadir}/kpackage/kcms/kcm_about-distro/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_about-distro/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcm_cpu
+%{_datadir}/kpackage/kcms/kcm_cpu/contents/main.qml
+%{_datadir}/kpackage/kcms/kcm_cpu/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_cpu/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcm_interrupts
+%{_datadir}/kpackage/kcms/kcm_interrupts/contents/main.qml
+%{_datadir}/kpackage/kcms/kcm_interrupts/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_interrupts/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcm_vulkan
+%{_datadir}/kpackage/kcms/kcm_vulkan/contents/main.qml
+%{_datadir}/kpackage/kcms/kcm_vulkan/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_vulkan/metadata.json
+%dir %{_datadir}/kpackage/kcms/kcm_wayland
+%{_datadir}/kpackage/kcms/kcm_wayland/contents/main.qml
+%{_datadir}/kpackage/kcms/kcm_wayland/metadata.desktop
+%{_datadir}/kpackage/kcms/kcm_wayland/metadata.json
+%{_datadir}/kservices5/kcm_cpu.desktop
+%{_datadir}/kservices5/kcm_interrupts.desktop
+%{_datadir}/kservices5/kcm_vulkan.desktop
+%{_datadir}/kservices5/kcm_wayland.desktop
