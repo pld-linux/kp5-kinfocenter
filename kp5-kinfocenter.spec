@@ -4,7 +4,7 @@
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
 Version:	5.23.2
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -115,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_interrupts.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_vulkan.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_wayland.so
+%dir %{_libdir}/qt5/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt5/qml/org/kde/kinfocenter/private
 %{_libdir}/qt5/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 %{_libdir}/qt5/qml/org/kde/kinfocenter/private/qmldir
