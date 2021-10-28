@@ -4,7 +4,7 @@
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
 Version:	5.23.2
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -115,26 +115,32 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_interrupts.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_vulkan.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_wayland.so
+%dir %{_libdir}/qt5/qml/org/kde/kinfocenter/private
 %{_libdir}/qt5/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 %{_libdir}/qt5/qml/org/kde/kinfocenter/private/qmldir
 %{_datadir}/kinfocenter
 %dir %{_datadir}/kpackage/kcms/kcm_about-distro
+%dir %{_datadir}/kpackage/kcms/kcm_about-distro/contents
 %{_datadir}/kpackage/kcms/kcm_about-distro/contents/main.qml
 %{_datadir}/kpackage/kcms/kcm_about-distro/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_about-distro/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_cpu
+%dir %{_datadir}/kpackage/kcms/kcm_cpu/contents
 %{_datadir}/kpackage/kcms/kcm_cpu/contents/main.qml
 %{_datadir}/kpackage/kcms/kcm_cpu/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_cpu/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_interrupts
+%dir %{_datadir}/kpackage/kcms/kcm_interrupts/contents
 %{_datadir}/kpackage/kcms/kcm_interrupts/contents/main.qml
 %{_datadir}/kpackage/kcms/kcm_interrupts/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_interrupts/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_vulkan
+%dir %{_datadir}/kpackage/kcms/kcm_vulkan/contents
 %{_datadir}/kpackage/kcms/kcm_vulkan/contents/main.qml
 %{_datadir}/kpackage/kcms/kcm_vulkan/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_vulkan/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_wayland
+%dir %{_datadir}/kpackage/kcms/kcm_wayland/contents
 %{_datadir}/kpackage/kcms/kcm_wayland/contents/main.qml
 %{_datadir}/kpackage/kcms/kcm_wayland/metadata.desktop
 %{_datadir}/kpackage/kcms/kcm_wayland/metadata.json
