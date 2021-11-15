@@ -4,7 +4,7 @@
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
 Version:	5.23.3
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -24,6 +24,7 @@ BuildRequires:	kf5-kdeclarative-devel
 BuildRequires:	kf5-kdelibs4support-devel
 BuildRequires:	kf5-kdoctools-devel
 BuildRequires:	kf5-khtml-devel
+BuildRequires:	libusb-devel
 BuildRequires:	ninja
 BuildRequires:	pciutils-devel
 BuildRequires:	qt5-build >= %{qtver}
