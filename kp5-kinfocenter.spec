@@ -1,14 +1,14 @@
-%define		kdeplasmaver	5.23.5
+%define		kdeplasmaver	5.24.0
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.23.5
+Version:	5.24.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	1f784aabc5b4427d20127151c3052963
+# Source0-md5:	f9a542276e05b3b4cb9fbd32c541a552
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -63,14 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kinfocenter
 /etc/xdg/menus/kinfocenter.menu
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_devinfo.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_info.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_memory.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_opengl.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_pci.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_usb.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcm_view1394.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_energyinfo.so
 %{_desktopdir}/org.kde.kinfocenter.desktop
 %{_datadir}/desktop-directories/kinfocenter.directory
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo
@@ -78,44 +70,16 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/Graph.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.desktop
-%{_datadir}/kservices5/about-distro.desktop
-%{_datadir}/kservices5/devinfo.desktop
-%{_datadir}/kservices5/dma.desktop
-%{_datadir}/kservices5/ioports.desktop
-%{_datadir}/kservices5/kcm_energyinfo.desktop
-%{_datadir}/kservices5/kcm_memory.desktop
-%{_datadir}/kservices5/kcm_pci.desktop
-%{_datadir}/kservices5/kcmusb.desktop
-%{_datadir}/kservices5/kcmview1394.desktop
-%{_datadir}/kservices5/opengl.desktop
-%{_datadir}/kservices5/smbstatus.desktop
-%{_datadir}/kservices5/xserver.desktop
 %{_datadir}/kservicetypes5/kinfocentercategory.desktop
-%{_datadir}/kpackage/kcms/kcm_energyinfo/metadata.json
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_nic.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_samba.so
 %dir %{_datadir}/kpackage/kcms/kcm_nic
 %dir %{_datadir}/kpackage/kcms/kcm_nic/contents
 %dir %{_datadir}/kpackage/kcms/kcm_nic/contents/ui
 %{_datadir}/kpackage/kcms/kcm_nic/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_nic/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_nic/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcmsamba
 %dir %{_datadir}/kpackage/kcms/kcmsamba/contents
-%{_datadir}/kpackage/kcms/kcmsamba/contents/ShareListItem.qml
-%{_datadir}/kpackage/kcms/kcmsamba/contents/main.qml
-%{_datadir}/kpackage/kcms/kcmsamba/metadata.desktop
-%{_datadir}/kpackage/kcms/kcmsamba/metadata.json
-%{_datadir}/kservices5/kcm_nic.desktop
 
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_about-distro.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_cpu.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_interrupts.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_vulkan.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/kcms/kcm_wayland.so
 %dir %{_libdir}/qt5/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt5/qml/org/kde/kinfocenter/private
 %{_libdir}/qt5/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
@@ -123,30 +87,38 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kinfocenter
 %dir %{_datadir}/kpackage/kcms/kcm_about-distro
 %dir %{_datadir}/kpackage/kcms/kcm_about-distro/contents
-%{_datadir}/kpackage/kcms/kcm_about-distro/contents/main.qml
-%{_datadir}/kpackage/kcms/kcm_about-distro/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_about-distro/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_cpu
 %dir %{_datadir}/kpackage/kcms/kcm_cpu/contents
-%{_datadir}/kpackage/kcms/kcm_cpu/contents/main.qml
-%{_datadir}/kpackage/kcms/kcm_cpu/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_cpu/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_interrupts
 %dir %{_datadir}/kpackage/kcms/kcm_interrupts/contents
-%{_datadir}/kpackage/kcms/kcm_interrupts/contents/main.qml
-%{_datadir}/kpackage/kcms/kcm_interrupts/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_interrupts/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_vulkan
 %dir %{_datadir}/kpackage/kcms/kcm_vulkan/contents
-%{_datadir}/kpackage/kcms/kcm_vulkan/contents/main.qml
-%{_datadir}/kpackage/kcms/kcm_vulkan/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_vulkan/metadata.json
 %dir %{_datadir}/kpackage/kcms/kcm_wayland
 %dir %{_datadir}/kpackage/kcms/kcm_wayland/contents
-%{_datadir}/kpackage/kcms/kcm_wayland/contents/main.qml
-%{_datadir}/kpackage/kcms/kcm_wayland/metadata.desktop
-%{_datadir}/kpackage/kcms/kcm_wayland/metadata.json
-%{_datadir}/kservices5/kcm_cpu.desktop
-%{_datadir}/kservices5/kcm_interrupts.desktop
-%{_datadir}/kservices5/kcm_vulkan.desktop
-%{_datadir}/kservices5/kcm_wayland.desktop
+
+%{_libdir}/libKInfoCenterInternal.so
+%{_libdir}/qt5/plugins/plasma/kcms/kcm_about-distro.so
+%{_libdir}/qt5/plugins/plasma/kcms/kcm_energyinfo.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_devinfo.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_egl.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_glx.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_nic.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_pci.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_samba.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_usb.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
+%{_datadir}/kpackage/kcms/kcm_about-distro/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_cpu/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_egl/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_glx/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_interrupts/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_pci/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_vulkan/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_wayland/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_xserver/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcmsamba/contents/ui/ShareListItem.qml
+%{_datadir}/kpackage/kcms/kcmsamba/contents/ui/main.qml
