@@ -4,7 +4,7 @@
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
 Version:	5.24.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -87,18 +87,39 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kinfocenter
 %dir %{_datadir}/kpackage/kcms/kcm_about-distro
 %dir %{_datadir}/kpackage/kcms/kcm_about-distro/contents
+%dir %{_datadir}/kpackage/kcms/kcm_about-distro/contents/ui
 %dir %{_datadir}/kpackage/kcms/kcm_cpu
 %dir %{_datadir}/kpackage/kcms/kcm_cpu/contents
+%dir %{_datadir}/kpackage/kcms/kcm_cpu/contents/ui
+%dir %{_datadir}/kpackage/kcms/kcm_egl
+%dir %{_datadir}/kpackage/kcms/kcm_egl/contents
+%dir %{_datadir}/kpackage/kcms/kcm_egl/contents/ui
+%dir %{_datadir}/kpackage/kcms/kcm_glx
+%dir %{_datadir}/kpackage/kcms/kcm_glx/contents
+%dir %{_datadir}/kpackage/kcms/kcm_glx/contents/ui
 %dir %{_datadir}/kpackage/kcms/kcm_interrupts
 %dir %{_datadir}/kpackage/kcms/kcm_interrupts/contents
+%dir %{_datadir}/kpackage/kcms/kcm_interrupts/contents/ui
+%dir %{_datadir}/kpackage/kcms/kcm_pci
+%dir %{_datadir}/kpackage/kcms/kcm_pci/contents
+%dir %{_datadir}/kpackage/kcms/kcm_pci/contents/ui
 %dir %{_datadir}/kpackage/kcms/kcm_vulkan
 %dir %{_datadir}/kpackage/kcms/kcm_vulkan/contents
+%dir %{_datadir}/kpackage/kcms/kcm_vulkan/contents/ui
 %dir %{_datadir}/kpackage/kcms/kcm_wayland
 %dir %{_datadir}/kpackage/kcms/kcm_wayland/contents
+%dir %{_datadir}/kpackage/kcms/kcm_wayland/contents/ui
+%dir %{_datadir}/kpackage/kcms/kcm_xserver
+%dir %{_datadir}/kpackage/kcms/kcm_xserver/contents
+%dir %{_datadir}/kpackage/kcms/kcm_xserver/contents/ui
+%dir %{_datadir}/kpackage/kcms/kcmsamba
+%dir %{_datadir}/kpackage/kcms/kcmsamba/contents
+%dir %{_datadir}/kpackage/kcms/kcmsamba/contents/ui
 
 %{_libdir}/libKInfoCenterInternal.so
 %{_libdir}/qt5/plugins/plasma/kcms/kcm_about-distro.so
 %{_libdir}/qt5/plugins/plasma/kcms/kcm_energyinfo.so
+%dir %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter
 %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
 %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_devinfo.so
 %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_egl.so
@@ -119,6 +140,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_pci/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_vulkan/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_wayland/contents/ui/main.qml
+%{_datadir}/kpackage/kcms/kcm_xserver/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_xserver/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcmsamba/contents/ui/ShareListItem.qml
 %{_datadir}/kpackage/kcms/kcmsamba/contents/ui/main.qml
