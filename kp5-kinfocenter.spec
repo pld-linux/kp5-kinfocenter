@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.24.5
+%define		kdeplasmaver	5.25.0
 %define		qtver		5.9.0
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.24.5
+Version:	5.25.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	4dd8450c600a4f0ba418d937e5b7aee7
+Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
+# Source0-md5:	5596f22271267824e5c099d4d649c7e3
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -85,8 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_nic/contents
 %dir %{_datadir}/kpackage/kcms/kcm_nic/contents/ui
 %{_datadir}/kpackage/kcms/kcm_nic/contents/ui/main.qml
-%dir %{_datadir}/kpackage/kcms/kcmsamba
-%dir %{_datadir}/kpackage/kcms/kcmsamba/contents
 
 %dir %{_libdir}/qt5/qml/org/kde/kinfocenter
 %dir %{_libdir}/qt5/qml/org/kde/kinfocenter/private
@@ -124,22 +122,22 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcmsamba/contents
 %dir %{_datadir}/kpackage/kcms/kcmsamba/contents/ui
 
-%{_libdir}/libKInfoCenterInternal.so
-%{_libdir}/qt5/plugins/plasma/kcms/kcm_about-distro.so
-%{_libdir}/qt5/plugins/plasma/kcms/kcm_energyinfo.so
+%attr(755,root,root) %{_libdir}/libKInfoCenterInternal.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kcm_about-distro.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kcm_energyinfo.so
 %dir %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_devinfo.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_egl.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_glx.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_nic.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_pci.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_samba.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_usb.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
-%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_devinfo.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_egl.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_glx.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_nic.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_pci.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_samba.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_usb.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_vulkan.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_wayland.so
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_xserver.so
 %{_datadir}/kpackage/kcms/kcm_about-distro/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_cpu/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_egl/contents/ui/main.qml
@@ -149,6 +147,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kpackage/kcms/kcm_vulkan/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_wayland/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcm_xserver/contents/ui/main.qml
-%{_datadir}/kpackage/kcms/kcm_xserver/contents/ui/main.qml
 %{_datadir}/kpackage/kcms/kcmsamba/contents/ui/ShareListItem.qml
 %{_datadir}/kpackage/kcms/kcmsamba/contents/ui/main.qml
+
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_firmware_security.so
+%attr(755,root,root) %{_prefix}/libexec/kauth/kinfocenter-dmidecode-helper
+%{_desktopdir}/kcm_about-distro.desktop
+%{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
+%{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
+%attr(755,root,root) %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/code/fwupdmgr.sh
+%{_datadir}/kpackage/kcms/kcm_firmware_security/contents/ui/main.qml
+%{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
