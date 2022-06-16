@@ -7,7 +7,7 @@
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
 Version:	5.25.0
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -155,6 +155,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kcm_about-distro.desktop
 %{_datadir}/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 %{_datadir}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
+%dir %{_datadir}/kpackage/kcms/kcm_firmware_security
+%dir %{_datadir}/kpackage/kcms/kcm_firmware_security/contents
+%dir %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/code
 %attr(755,root,root) %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/code/fwupdmgr.sh
+%dir %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/ui
 %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/ui/main.qml
 %{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
