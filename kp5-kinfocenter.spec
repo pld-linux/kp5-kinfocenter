@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.25.5
+%define		kdeplasmaver	5.26.0
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.25.5
-Release:	2
+Version:	5.26.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	74471187c737708af17fc7bf42907c5e
+# Source0-md5:	f691c05196df28d590f242ebf16e2170
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
@@ -78,7 +78,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/Graph.qml
 %{_datadir}/kpackage/kcms/kcm_energyinfo/contents/ui/main.qml
-%{_datadir}/kservicetypes5/kinfocentercategory.desktop
 %{_datadir}/metainfo/org.kde.kinfocenter.appdata.xml
 
 %dir %{_datadir}/kpackage/kcms/kcm_nic
@@ -162,3 +161,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/ui
 %{_datadir}/kpackage/kcms/kcm_firmware_security/contents/ui/main.qml
 %{_datadir}/polkit-1/actions/org.kde.kinfocenter.dmidecode.policy
+
+%{_libdir}/qt5/plugins/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
+%{_datadir}/kpackage/kcms/kcm_kwinsupportinfo/contents/ui/main.qml
