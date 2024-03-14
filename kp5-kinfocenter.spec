@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeplasmaver	5.27.10
+%define		kdeplasmaver	5.27.11
 %define		qtver		5.15.2
 %define		kpname		kinfocenter
 Summary:	kinfocenter
 Name:		kp5-%{kpname}
-Version:	5.27.10
+Version:	5.27.11
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	0ef8d9f18707712fc4bcccf59138f2c7
+# Source0-md5:	72698db42d1d23ca1a41874b55a4e54f
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	OpenGL-devel
